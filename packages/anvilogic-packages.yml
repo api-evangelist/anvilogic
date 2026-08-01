@@ -1,0 +1,71 @@
+generated: '2026-07-31'
+method: searched
+source: >-
+  https://splunkbase.splunk.com/api/v1/app/?query=anvilogic,
+  https://api.github.com/orgs/anvilogic-forge/repos
+packages:
+- language: splunk
+  registry: splunkbase
+  name: Anvilogic App for Splunk
+  app_id: anvilogic
+  uid: 4975
+  url: https://splunkbase.splunk.com/app/4975/
+  official: true
+  kind: platform-app
+  description: >-
+    The Anvilogic App for Splunk connects a Splunk Enterprise or Splunk Cloud
+    Platform instance to the Anvilogic platform; it creates the Anvilogic custom
+    indexes, the avl_admin role, and the HEC collector commands used to write
+    detection output back into Splunk.
+  cloud_compatible: true
+  access: restricted
+  published: '2026-07-09'
+  updated: '2026-07-15'
+  download_count: 969
+  docs: https://public-docs.anvilogic.com/get-started/onboarding-guide/select-your-data-repository-and-get-data-in/integrate-splunk-as-your-data-repository/download-and-install-the-anvilogic-app-for-splunk
+- language: go
+  registry: github
+  name: aws-falcon-data-forwarder
+  url: https://github.com/anvilogic-forge/aws-falcon-data-forwarder
+  install: 'git clone https://github.com/anvilogic-forge/aws-falcon-data-forwarder'
+  official: true
+  kind: data-forwarder
+  description: >-
+    CrowdStrike Falcon log forwarder that moves data from the Falcon S3 bucket to
+    a customer-controlled S3 bucket. Published by the Anvilogic Forge threat
+    research team.
+- language: yaml
+  registry: github
+  name: armory
+  url: https://github.com/anvilogic-forge/armory
+  official: true
+  kind: detection-content
+  description: 'Anvilogic Forge detection content repository.'
+registries_probed:
+- registry: npm
+  query: anvilogic
+  result: none
+- registry: npm
+  query: '@anvilogic/mcp'
+  result: none
+- registry: pypi
+  query: anvilogic
+  result: none
+- registry: splunkbase
+  query: anvilogic
+  result: 1 app
+- registry: github
+  org: anvilogic-forge
+  result: 2 public repos
+- registry: github
+  org: anvilogic
+  result: 0 public repos
+summary:
+  official: 3
+  client_sdks: 0
+  note: >-
+    Anvilogic ships no first-party language SDK (no npm, PyPI, Maven, NuGet, Go
+    module, RubyGems, Packagist or crates.io package). Its distributed artifacts
+    are a Splunkbase platform app and two Anvilogic Forge GitHub repositories.
+    Programmatic access is intended through the OAuth-protected MCP server rather
+    than a generated client library.

@@ -1,0 +1,93 @@
+generated: '2026-07-31'
+method: searched
+source: >-
+  https://secure.anvilogic.com/.well-known/oauth-authorization-server,
+  https://secure.anvilogic.com/.well-known/oauth-protected-resource,
+  https://trust.anvilogic.com/
+standards:
+- id: oauth2
+  name: OAuth 2.0 / 2.1 Authorization Framework (RFC 6749)
+  conforms: true
+  evidence: >-
+    Authorization server advertises authorization_code + refresh_token grants and
+    a code response type at /.well-known/oauth-authorization-server.
+- id: rfc8414-authorization-server-metadata
+  name: OAuth 2.0 Authorization Server Metadata (RFC 8414)
+  conforms: true
+  evidence: 'https://secure.anvilogic.com/.well-known/oauth-authorization-server returns 200 application/json'
+- id: rfc9728-protected-resource-metadata
+  name: OAuth 2.0 Protected Resource Metadata (RFC 9728)
+  conforms: true
+  evidence: >-
+    https://secure.anvilogic.com/.well-known/oauth-protected-resource returns 200
+    and the /mcp endpoint's 401 WWW-Authenticate header carries the
+    resource_metadata parameter.
+- id: rfc7636-pkce
+  name: Proof Key for Code Exchange (RFC 7636)
+  conforms: true
+  evidence: 'code_challenge_methods_supported: [S256]'
+- id: rfc7662-token-introspection
+  name: OAuth 2.0 Token Introspection (RFC 7662)
+  conforms: true
+  evidence: 'introspection_endpoint published: https://secure.anvilogic.com/api/authentication/oauth/introspect'
+- id: mcp
+  name: Model Context Protocol
+  conforms: true
+  evidence: >-
+    Hosted streamable-HTTP MCP server at https://secure.anvilogic.com/mcp using
+    the MCP OAuth authorization spec (protected-resource metadata discovery).
+- id: rfc9116-security-txt
+  name: security.txt
+  conforms: false
+  evidence: 'no /.well-known/security.txt on any Anvilogic host (404/403)'
+- id: openid-connect
+  name: OpenID Connect Discovery 1.0
+  conforms: false
+  evidence: '/.well-known/openid-configuration returns 404; only OAuth 2.0 metadata is published'
+- id: a2a
+  name: A2A Agent Card
+  conforms: false
+  evidence: 'no /.well-known/agent-card.json or /.well-known/agent.json on any host'
+- id: openapi
+  name: OpenAPI
+  conforms: false
+  evidence: >-
+    No public OpenAPI/Swagger document found on www, public-docs, or secure hosts
+    after probing /openapi.json, /openapi.yaml, /swagger.json, /api-docs,
+    /api/openapi.json, /api/v1/openapi.json and /redoc. Product API documentation
+    sits behind the platform login at secure.anvilogic.com.
+- id: rfc9457-problem-details
+  name: Problem Details for HTTP APIs (RFC 9457)
+  conforms: false
+  evidence: >-
+    Observed error bodies use a bare {"error","message"} envelope with
+    content-type application/json, not application/problem+json.
+- id: asyncapi
+  name: AsyncAPI
+  conforms: false
+  evidence: >-
+    No AsyncAPI document published; the documented event-forwarding path
+    ("Forward Events" integration) delivers to a provisioned S3 bucket rather
+    than an HTTP webhook or streaming channel.
+compliance:
+  published: true
+  url: https://trust.anvilogic.com/
+  provider: Akitra Trust Center
+  certifications:
+  - id: soc2-type2
+    name: SOC 2 Type 2
+    year: 2025
+  - id: iso-27001-2022
+    name: ISO/IEC 27001:2022
+    year: 2025
+  - id: data-privacy-framework
+    name: EU-US / UK / Swiss Data Privacy Framework
+  - id: csa-ai-trustworthy-pledge
+    name: CSA AI Trustworthy Pledge
+  - id: cloud-security-alliance
+    name: Cloud Security Alliance membership
+  reports:
+  - SOC 2 Type II Report
+  - ISO 27001:2022 Audit Report (2025)
+  - 2025 Penetration Test Report
+  - 2026 Annual Penetration Test Report Remediation Letter

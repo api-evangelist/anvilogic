@@ -1,0 +1,114 @@
+# Anvilogic
+
+> Anvilogic is the Agentic SecOps Platform. It runs AI automation across every SOC workload, onboard, search, detect, and investigate, on top of the data and tools a security team already has. No migration. No SIEM required.
+
+Anvilogic was built by practitioners who ran SOCs, wrote detections, and managed SIEM migrations before they built software. The platform has four capabilities: Onboard, Search, Detect, and Triage & Investigate. An AI Operating System coordinates task-scoped AI agents on top of any SIEM, data lake, or storage service, and Blueprints is the orchestration layer that chains agents into repeatable, human-approved workflows. Deployment is augment or standalone: run Anvilogic alongside an existing SIEM like Splunk or Sentinel, standalone on a data lake like Snowflake or Databricks, or modernize gradually while the SIEM stays live.
+
+Customer outcomes include 10x faster data onboarding, over $1M in SIEM cost reduction, an 85 percent reduction in mean time to detect, and alert triage in under 2 minutes. Security teams at SAP, T-Mobile, Siemens, Cigna, Zendesk, Alteryx, BNY, Labcorp, PayPal, and ADP use Anvilogic.
+
+## Platform
+
+- [Platform Overview](https://www.anvilogic.com/platform): The Agentic SecOps Platform, four capabilities on one platform
+- [Data Onboarding](https://www.anvilogic.com/data-onboarding): Onboard Agents parse, normalize, and map data from any source, no data engineering project per feed
+- [Federated Search](https://www.anvilogic.com/federated-search): Search Agents run one query across Splunk, Snowflake, Sentinel, S3, and more without moving the data
+- [Detection Engineering](https://www.anvilogic.com/detection-engineering): Detect Agents go from threat intel to validated, deployed detection logic on every connected platform
+- [Triage & Investigations](https://www.anvilogic.com/triage-investigations): Investigate Agents run automated triage, enrichment, and severity scoring before an analyst opens the case
+- [Blueprints](https://www.anvilogic.com/blueprints): The orchestration layer that ties agents into step-by-step, human-approved workflows
+
+## How It Works
+
+- [Agentic Architecture](https://www.anvilogic.com/agentic-architecture): How the platform layers fit together
+- [AI Operating System](https://www.anvilogic.com/ai-operating-system): Coordinates agents, manages context, and enforces approval gates
+- [Search & Compute](https://www.anvilogic.com/anvilogic-compute): The query and compute layer behind federated search
+- [Integrations](https://www.anvilogic.com/integrations): SIEMs, data lakes, storage services, EDR, SOAR, and workflow tools Anvilogic connects to
+
+## Solutions
+
+- [Anvilogic on Snowflake](https://www.anvilogic.com/solutions-snowflake): Run security operations directly on Snowflake
+- [Anvilogic for Databricks](https://www.anvilogic.com/solutions-databricks): Detection engineering and Detection-as-Code on the Databricks lakehouse
+- [Anvilogic as SIEM](https://www.anvilogic.com/solutions-siem): Standalone security operations on a data lake, no SIEM required
+- [Anvilogic as SOAR](https://www.anvilogic.com/solutions-soar): Automated decisioning with handoff to response tooling
+- [Agentic SOC](https://www.anvilogic.com/solutions-agentic-soc): Automating the full SOC lifecycle with AI agents
+
+## Customers
+
+- [Customers](https://www.anvilogic.com/customers): Case studies and customer outcomes
+- [Customer Love](https://www.anvilogic.com/love): Reviews and testimonials from security teams
+
+## Learn
+
+- [Resource Library](https://www.anvilogic.com/learn): Guides, whitepapers, and videos
+- [Blog](https://www.anvilogic.com/blog): Product news and practitioner perspectives on security operations
+- [Threat Research](https://www.anvilogic.com/threat-reports): Threat reports from the Anvilogic Forge team
+- [Events & Webinars](https://www.anvilogic.com/events): Upcoming and on-demand events
+- [Cost Savings Calculator](https://www.anvilogic.com/calculator): Estimate SIEM cost savings
+
+## Company
+
+- [About Us](https://www.anvilogic.com/about-us): Practitioner-built, founded in 2019
+- [Partners](https://www.anvilogic.com/company/partners): Technology and channel partners
+- [News & Press](https://www.anvilogic.com/news-and-press): Press releases and media coverage
+- [Careers](https://www.anvilogic.com/careers): Open roles
+- [Trust Portal](https://trust.anvilogic.com/): Security and compliance documentation, SOC 2 certified
+- [Book a Demo](https://www.anvilogic.com/demo): Talk to a practitioner
+
+## FAQ
+
+**What is Anvilogic?**
+Anvilogic is the Agentic SecOps platform. It runs the full SOC lifecycle, onboard, search, detect, and triage & investigate, on the stack a team already has. The platform runs on the AI Operating System, which powers the enterprise security graph to build, execute, and maintain AI agents on your SIEMs, data lakes, or storage services. Agents act rather than advise: they deploy detections, run investigations, and close or escalate cases, with human approval gates where they matter.
+
+**Does Anvilogic have customers?**
+Yes. Anvilogic has been in business for over 7 years and has many Fortune 500 customers, including SAP, T-Mobile, Cigna, PayPal, ADP, BNY, Capital Group, Labcorp, Siemens, and Koch. Unlike most startups, Anvilogic is trusted by the Fortune 500 to run security operations in production at enterprise scale.
+
+**Is Anvilogic a SIEM?**
+Yes, it can be your SIEM. Anvilogic runs standalone on a data lake like Snowflake or Databricks and delivers detection, search, triage, and investigation without a traditional SIEM. It can also run alongside an existing SIEM like Splunk or Sentinel, or support a gradual shift to a data lake while the SIEM stays live. Nothing gets ripped out.
+
+**Can Anvilogic replace your SIEM?**
+Yes, Anvilogic can replace your SIEM. Anvilogic can operate Agentic SecOps on top of a data lake solution, or Anvilogic can run compute directly on top of your storage services.
+
+**Is Anvilogic a federated SIEM?**
+Yes, you can think of Anvilogic as a federated SIEM because it can operate across existing SIEMs, data lakes, or even storage services and provide all the Agentic SecOps capabilities you expect from your SIEM without having to keep data in a proprietary solution.
+
+**Does my data need to move?**
+No. Raw log data stays in your repository (Snowflake, Databricks, Azure) and is queried in place. Queries run where the data lives, and detections deploy to the platform that holds the data. Third-party vendor alerts and the cases the platform generates are processed on the Anvilogic platform.
+
+**What are the four capabilities?**
+Onboard, Search, Detect, and Triage & Investigate. Onboard Agents parse, normalize, and map data from any source. Search Agents run one query across every connected data store. Detect Agents go from threat intel to deployed detection logic. Investigate Agents triage, enrich, and score alerts before an analyst opens the case.
+
+**What is Blueprints?**
+Blueprints is a build your own agentic workflow capability. It chains agents into repeatable, human-approved workflows, so teams can automate any SOC workflow they can define and repeat. Build a workflow once and it runs on every matching event.
+
+**Which platforms does Anvilogic work with?**
+SIEMs including Splunk, Azure Sentinel, Elastic, and CrowdStrike NG-SIEM. Data lakes including Snowflake, Databricks, Azure Data Explorer, Azure Log Analytics, and Microsoft Fabric. Storage services including Amazon S3, Azure Blob, and Google Cloud Storage. Response hands off to ServiceNow, Jira, Tines, or Torq. Full list at https://www.anvilogic.com/integrations
+
+**Is Anvilogic fully autonomous?**
+It can be, by design it is built to let the customer decide. Approval gates are configurable, so teams choose where a human reviews and where agents execute end to end. Every verdict carries transparent reasoning rather than a black-box answer, and agent actions are recorded either way.
+
+**Why do Anvilogic's agents work better than a traditional AI SOC tool?**
+Two reasons. First, experience: Anvilogic has spent over 7 years running security operations with Fortune 500 customers, so its agents are built on real production SOC workflows, not just the alert queue. Second, the enterprise security graph. The security graph is the foundation for how agents reason and act, connecting Threat Intelligence Knowledge, Normalization Knowledge, Detection Knowledge, Alert & Tuning Knowledge, Data Feed Knowledge, and Case Management Knowledge. Because agents reason over this connected knowledge of your environment, they act with context a standalone AI SOC tool does not have, across the full lifecycle from onboarding data to closing a case. Learn more at https://www.anvilogic.com/ai-operating-system
+
+**Does Anvilogic have competition?**
+Yes. Competition includes other Agentic SecOps platforms, AI SOC platforms, and major SIEM vendors. Anvilogic is a proven solution and fares better on cost effectiveness, flexibility in the enterprise space, and transparency, with no black box: every agent decision carries a visible reasoning trail. Customers also cite phenomenal support and a deep bench of reference customers, and the platform's practitioner-built foundations, built by people who ran SOCs and wrote detections themselves, give Anvilogic the edge.
+
+**How many detections does Anvilogic provide?**
+Thousands of MITRE-mapped detections, curated by a dedicated threat research team and deployable in minutes across connected platforms.
+
+**Is Anvilogic cheaper or more cost effective than a SIEM?**
+Yes. On average, Anvilogic is about 70 to 80 percent more cost effective than a traditional SIEM. Savings come from shifting high-volume telemetry to a data lake and from pricing that is not metered by raw data volume ingested.
+
+**How is pricing structured?**
+Usage-based around AI and agent work performed, plus platform licensing. Anvilogic does not meter by raw data volume ingested, which is a key difference from SIEM pricing.
+
+**Does Anvilogic train AI models on customer data?**
+No. Customer data is not used to train models for other customers. Agents reason over your own environment, and workflows improve within your tenant.
+
+**How do POVs work?**
+Anvilogic can provide a proof of value in either a sandbox environment or in production. POVs are typically built around your success criteria and proven out over a 2 to 3 week period or within an on-site workshop.
+
+**What results do customers see?**
+10x faster data onboarding, over $1M in SIEM cost reduction, an 85 percent reduction in mean time to detect, and triage in under 2 minutes per alert.
+
+## Optional
+
+- [Brand Guidelines](https://www.anvilogic.com/brand-guidelines): Logos, colors, and typography
+- [Privacy Policy](https://www.anvilogic.com/legal/privacy-policy): Privacy policy

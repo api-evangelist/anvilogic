@@ -1,0 +1,79 @@
+generated: '2026-07-31'
+method: searched
+source: live probes of /.well-known/* across every Anvilogic host
+hosts_probed:
+- https://secure.anvilogic.com
+- https://www.anvilogic.com
+- https://public-docs.anvilogic.com
+- https://trust.anvilogic.com
+host: https://secure.anvilogic.com
+documents:
+- path: /.well-known/oauth-authorization-server
+  spec: RFC 8414 OAuth 2.0 Authorization Server Metadata
+  host: secure.anvilogic.com
+  status: 200
+  content_type: application/json
+  file: anvilogic-oauth-authorization-server.json
+- path: /.well-known/oauth-protected-resource
+  spec: RFC 9728 OAuth 2.0 Protected Resource Metadata
+  host: secure.anvilogic.com
+  status: 200
+  content_type: application/json
+  file: anvilogic-oauth-protected-resource.json
+  note: advertises https://secure.anvilogic.com/mcp as the protected resource
+- path: /.well-known/openid-configuration
+  spec: OpenID Connect Discovery 1.0
+  host: secure.anvilogic.com
+  status: 404
+- path: /.well-known/security.txt
+  spec: RFC 9116
+  host: secure.anvilogic.com
+  status: 404
+- path: /.well-known/security.txt
+  spec: RFC 9116
+  host: www.anvilogic.com
+  status: 404
+- path: /.well-known/security.txt
+  spec: RFC 9116
+  host: public-docs.anvilogic.com
+  status: 404
+- path: /.well-known/security.txt
+  spec: RFC 9116
+  host: trust.anvilogic.com
+  status: 403
+- path: /.well-known/api-catalog
+  spec: RFC 9727
+  host: secure.anvilogic.com
+  status: 404
+- path: /.well-known/agent-card.json
+  spec: A2A 1.0.0
+  host: secure.anvilogic.com
+  status: 404
+- path: /.well-known/agent-card.json
+  spec: A2A 1.0.0
+  host: www.anvilogic.com
+  status: 404
+- path: /.well-known/agent.json
+  spec: A2A pre-0.3 legacy
+  host: secure.anvilogic.com
+  status: 404
+- path: /.well-known/agent.json
+  spec: A2A pre-0.3 legacy
+  host: www.anvilogic.com
+  status: 404
+- path: /.well-known/ai-plugin.json
+  host: secure.anvilogic.com
+  status: 404
+summary:
+  found: 2
+  probed: 13
+  security_txt: false
+  agent_card: false
+  oauth_discovery: true
+x-evidence:
+  fetched: '2026-07-31'
+  notes: >-
+    secure.anvilogic.com returns a genuine nginx 404 for unmatched /.well-known/
+    paths, so the two 200 JSON documents recorded here are real and not an SPA
+    catch-all. www.anvilogic.com (Webflow) returns an "Invalid .well-known
+    request" HTML 404 page. No security.txt is published on any Anvilogic host.

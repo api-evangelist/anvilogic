@@ -1,0 +1,78 @@
+generated: '2026-07-31'
+method: probed
+source: >-
+  live probes of https://secure.anvilogic.com/mcp and
+  /.well-known/oauth-*, plus
+  https://public-docs.anvilogic.com/get-started/ai-operating-system-pricing
+scope_note: >-
+  Anvilogic publishes no public OpenAPI and its API reference is behind the
+  platform login, so this file records only cross-cutting semantics that were
+  directly observed on the wire or published in the public docs. Pagination,
+  field expansion, sparse fieldsets, metadata and request-id tracing conventions
+  could NOT be observed and are recorded as unknown rather than guessed.
+authentication:
+  style: OAuth 2.1 bearer token
+  transport_header: Authorization
+  challenge_header: WWW-Authenticate
+  challenge_carries_resource_metadata: true
+  pkce: S256
+  client_auth: none
+  profile: authentication/anvilogic-authentication.yml
+protocol:
+  primary: Model Context Protocol (JSON-RPC 2.0 over streamable HTTP)
+  endpoint: https://secure.anvilogic.com/mcp
+  accept: 'application/json, text/event-stream'
+  content_type: application/json
+idempotency:
+  supported: unknown
+  header: null
+  note: >-
+    No idempotency key header or retry-safety contract is documented publicly and
+    none was observable on the unauthenticated surface. Deliberately NOT asserted,
+    and no Idempotency pointer is wired in apis.yml.
+pagination:
+  style: unknown
+  note: 'not observable — the tool/operation surface is auth-gated'
+versioning:
+  style: unknown
+  note: 'see lifecycle/anvilogic-lifecycle.yml — no public versioning policy'
+error_envelope:
+  format: bare-json
+  media_type: application/json
+  fields:
+  - name: error
+    description: 'machine-readable error slug, e.g. "unauthorized"'
+  - name: message
+    description: 'human-readable message, e.g. "Authentication required."'
+  observed_example_status: 401
+  rfc9457: false
+  note: >-
+    Observed on an unauthenticated POST to https://secure.anvilogic.com/mcp. The
+    platform also returns Jersey-style {"code","message"} JSON for HTTP 405 on
+    /api/authentication/oauth/token, so the envelope is not uniform across
+    surfaces.
+rate_limiting:
+  http_headers: unknown
+  model: credit budgets
+  description: >-
+    Rather than request-per-second throttling, Anvilogic governs consumption with
+    AI credits. Each Anvilogic MCP Server tool call is a fixed rate of 1 credit.
+    Administrators set an independent daily budget per product (Blueprints,
+    Triage Agent, AI Chat, Anvilogic MCP Server), notifications fire as a daily
+    budget is approached and crossed, and consumption rolls up against a yearly
+    credit pack with no monthly reset.
+  dashboard: https://secure.anvilogic.com/settings/agents/credit_dashboard
+  docs: https://public-docs.anvilogic.com/get-started/ai-operating-system-pricing
+human_in_the_loop:
+  approval_gates: configurable
+  description: >-
+    Agent actions run behind configurable approval gates; teams choose where a
+    human reviews and where agents execute end to end. Every verdict carries a
+    reasoning trail and agent actions are recorded either way.
+  source: https://www.anvilogic.com/llms.txt
+cross_links:
+  authentication: authentication/anvilogic-authentication.yml
+  lifecycle: lifecycle/anvilogic-lifecycle.yml
+  conformance: conformance/anvilogic-conformance.yml
+  mcp: mcp/anvilogic-mcp.yml
+  well_known: well-known/anvilogic-well-known.yml

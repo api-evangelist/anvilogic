@@ -1,0 +1,4 @@
+{
+  "resource": "https://secure.anvilogic.com/mcp",
+  "authorization_servers": [ "https://secure.anvilogic.com" ]
+}

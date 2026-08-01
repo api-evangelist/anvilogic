@@ -1,0 +1,62 @@
+generated: '2026-07-31'
+method: searched
+status: published
+source: https://secure.anvilogic.com/.well-known/oauth-protected-resource
+docs: https://public-docs.anvilogic.com/get-started/ai-operating-system-pricing
+server:
+  name: anvilogic
+  title: Anvilogic MCP Server
+  transport: http
+  url: https://secure.anvilogic.com/mcp
+  hosted: true
+  vendor_operated: true
+discovery:
+  protected_resource_metadata: https://secure.anvilogic.com/.well-known/oauth-protected-resource
+  authorization_server_metadata: https://secure.anvilogic.com/.well-known/oauth-authorization-server
+  resource: https://secure.anvilogic.com/mcp
+  authorization_servers:
+  - https://secure.anvilogic.com
+authentication:
+  required: true
+  scheme: OAuth 2.1 Bearer
+  challenge: 'WWW-Authenticate: Bearer realm="mcp", resource_metadata="https://secure.anvilogic.com/.well-known/oauth-protected-resource"'
+  grant_types:
+  - authorization_code
+  - refresh_token
+  pkce: S256
+  client_auth: none
+  profile: authentication/anvilogic-authentication.yml
+tools: []
+tools_status: gated
+tools_note: >-
+  tools/list and initialize both return HTTP 401 {"error":"unauthorized",
+  "message":"Authentication required."} without a bearer token, so the live tool
+  manifest and per-tool inputSchema require an authenticated Anvilogic tenant.
+  Anvilogic publishes no anonymous tool catalog in its public docs or llms.txt,
+  so no tool names are recorded here rather than guessed. Nothing in this file is
+  derived or inferred — the server, its URL and its auth model are read directly
+  from the provider's own RFC 9728 / RFC 8414 metadata documents.
+metering:
+  model: AI credits
+  rate: 1 credit per tool call
+  type: fixed-rate
+  budget: per-product daily budget configurable for the Anvilogic MCP Server
+  dashboard: https://secure.anvilogic.com/settings/agents/credit_dashboard
+  source: https://public-docs.anvilogic.com/get-started/ai-operating-system-pricing
+related:
+  customer_configured_connectors: >-
+    Anvilogic Blueprints also consume customer-configured third-party MCP
+    connectors, so the platform is both an MCP server and an MCP client.
+x-evidence:
+- fetched: '2026-07-31'
+  url: https://secure.anvilogic.com/.well-known/oauth-protected-resource
+  http_status: 200
+  content_type: application/json
+- fetched: '2026-07-31'
+  url: https://secure.anvilogic.com/mcp
+  method: 'POST tools/list'
+  http_status: 401
+  content_type: application/json
+- fetched: '2026-07-31'
+  url: https://public-docs.anvilogic.com/get-started/ai-operating-system-pricing
+  http_status: 200

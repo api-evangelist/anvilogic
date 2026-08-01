@@ -1,0 +1,45 @@
+generated: '2026-07-31'
+method: searched
+source: >-
+  https://status.anvilogic.com/, https://public-docs.anvilogic.com/,
+  https://www.anvilogic.com/legal/msa
+status_page: https://status.anvilogic.com/
+status_page_provider: Better Stack Uptime
+versioning:
+  scheme: unpublished
+  current: null
+  docs: null
+  note: >-
+    Anvilogic publishes no public API versioning policy. The platform is
+    delivered as a continuously updated SaaS at secure.anvilogic.com and its
+    product documentation is behind the customer login, so no version scheme
+    (URI path, header, or date train) could be observed.
+deprecation:
+  policy_url: null
+  sunset_header: null
+  note: >-
+    No public deprecation policy and no RFC 8594 Sunset/Deprecation header
+    documentation was found. Not asserted rather than assumed — no Deprecation
+    pointer is wired in apis.yml.
+sla:
+  url: https://www.anvilogic.com/legal/msa
+  uptime_target: null
+  note: 'Service commitments are governed by the Master Services Agreement; no public uptime number is published.'
+changelog:
+  url: null
+  note: >-
+    No public dated changelog. Product announcements are published as press
+    releases and blog posts (https://www.anvilogic.com/news-and-press,
+    https://www.anvilogic.com/blog) rather than a versioned release feed, so no
+    changelog/ artifact and no ChangeLog pointer are emitted.
+support:
+  demo: https://www.anvilogic.com/demo
+  docs: https://public-docs.anvilogic.com/
+deprecated_operations: []
+x-evidence:
+- fetched: '2026-07-31'
+  url: https://status.anvilogic.com/
+  http_status: 200
+- fetched: '2026-07-31'
+  url: https://www.anvilogic.com/legal/msa
+  http_status: 200

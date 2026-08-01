@@ -1,23 +1,135 @@
 aid: anvilogic
 name: Anvilogic
-description: 'Anvilogic is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Anvilogic is an Agentic SecOps platform founded in 2019 by former SOC
+  practitioners. It runs AI automation across the security operations lifecycle —
+  onboarding, federated search, detection engineering, and triage & investigation —
+  on top of the SIEMs, data lakes, and storage services a security team already
+  operates, without requiring data migration. An AI Operating System coordinates
+  task-scoped agents over an enterprise security graph, and Blueprints chains those
+  agents into repeatable, human-approved workflows. The platform integrates with
+  Splunk, Snowflake, Databricks, Microsoft Sentinel, Elastic, CrowdStrike, Amazon
+  S3, and dozens of EDR, SOAR, and workflow tools. Anvilogic exposes an OAuth 2.1
+  protected Model Context Protocol (MCP) server so agents and customer-configured
+  MCP connectors can call platform tools directly.'
+image: https://cdn.prod.website-files.com/6a4cfd0a31bb60a376cd1ee9/6a68af2d3deeaa9baf085208_anvilogic-og-1c-1200x630.png
 url: https://raw.githubusercontent.com/api-evangelist/anvilogic/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-07-31'
 modified: '2026-07-31'
 tags:
 - Company
-apis: []
+- Security
+- Cybersecurity
+- Security Operations
+- Detection Engineering
+- SIEM
+- Threat Detection
+- Artificial Intelligence
+- Agents
+- Model Context Protocol
+- Data Lake
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- aid: anvilogic:mcp
+  name: Anvilogic MCP Server
+  description: 'The Anvilogic MCP Server is the platform''s Model Context Protocol
+    surface, letting AI agents and MCP clients call Anvilogic platform tools against
+    a customer''s security graph, detections, searches, and cases. It is an OAuth
+    2.1 protected resource: an unauthenticated tools/list returns HTTP 401 with a
+    WWW-Authenticate Bearer challenge advertising the RFC 9728 protected-resource
+    metadata document. Tool calls are metered at 1 AI credit per call and governed
+    by a per-product daily budget.'
+  humanURL: https://public-docs.anvilogic.com/get-started/ai-operating-system-pricing
+  baseURL: https://secure.anvilogic.com/mcp
+  tags:
+  - Model Context Protocol
+  - Agents
+  - Security Operations
+  properties:
+  - type: MCPServer
+    url: mcp/anvilogic-mcp.yml
+  - type: Authentication
+    url: authentication/anvilogic-authentication.yml
+  - type: Documentation
+    url: https://public-docs.anvilogic.com/get-started/ai-operating-system-pricing
+- aid: anvilogic:authorization
+  name: Anvilogic Platform Authorization API
+  description: 'The OAuth 2.1 authorization surface for the Anvilogic platform,
+    advertised at the RFC 8414 /.well-known/oauth-authorization-server document on
+    secure.anvilogic.com. It supports the authorization_code grant with PKCE (S256)
+    and refresh_token, uses public clients (token_endpoint_auth_methods_supported =
+    none), and exposes token and introspection endpoints. It is the authorization
+    server backing the Anvilogic MCP Server protected resource.'
+  humanURL: https://public-docs.anvilogic.com/get-started/onboarding-guide/additional-tasks
+  baseURL: https://secure.anvilogic.com/api/authentication/oauth
+  tags:
+  - OAuth
+  - Authentication
+  - Security
+  properties:
+  - type: Authentication
+    url: authentication/anvilogic-authentication.yml
+  - type: WellKnown
+    url: well-known/anvilogic-well-known.yml
 common:
 - type: Website
+  url: https://www.anvilogic.com/
+- type: DeveloperPortal
+  url: https://public-docs.anvilogic.com/
+- type: Documentation
+  url: https://public-docs.anvilogic.com/
+- type: GettingStarted
+  url: https://public-docs.anvilogic.com/get-started/onboarding-guide
+- type: Blog
+  url: https://www.anvilogic.com/blog
+- type: GitHubOrganization
+  url: https://github.com/anvilogic-forge
+- type: SignUp
+  url: https://secure.anvilogic.com/login
+- type: Login
+  url: https://secure.anvilogic.com/login
+- type: Pricing
+  url: https://public-docs.anvilogic.com/get-started/ai-operating-system-pricing
+- type: TermsOfService
+  url: https://www.anvilogic.com/legal/msa
+- type: PrivacyPolicy
+  url: https://www.anvilogic.com/legal/privacy-policy
+- type: Support
+  url: https://www.anvilogic.com/demo
+- type: StatusPage
+  url: https://status.anvilogic.com/
+- type: TrustCenter
+  url: security/anvilogic-trust-center.yml
+- type: Compliance
+  url: https://trust.anvilogic.com/
+- type: WellKnown
+  url: well-known/anvilogic-well-known.yml
+- type: MCPServer
+  url: mcp/anvilogic-mcp.yml
+- type: LLMsTxt
+  url: llms/anvilogic-llms.txt
+- type: Authentication
+  url: authentication/anvilogic-authentication.yml
+- type: Packages
+  url: packages/anvilogic-packages.yml
+- type: Conformance
+  url: conformance/anvilogic-conformance.yml
+- type: Lifecycle
+  url: lifecycle/anvilogic-lifecycle.yml
+- type: Conventions
+  url: conventions/anvilogic-conventions.yml
+- type: DomainSecurity
+  url: security/anvilogic-domain-security.yml
+- type: SecondaryMarket
   url: https://forgeglobal.com/anvilogic_stock/
+x-enrichment:
+  date: '2026-07-31'
+  status: enriched
+  artifacts_added: 13
+  pass: local-v1
