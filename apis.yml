@@ -15,7 +15,7 @@ image: https://cdn.prod.website-files.com/6a4cfd0a31bb60a376cd1ee9/6a68af2d3deea
 url: https://raw.githubusercontent.com/api-evangelist/anvilogic/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 created: '2026-07-31'
 modified: '2026-07-31'
 tags:
