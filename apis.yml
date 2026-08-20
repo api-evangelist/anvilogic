@@ -28,6 +28,18 @@ tags:
 - Threat Detection
 - Artificial Intelligence
 - Agents
+- MCP
+- Data Lake
+tags_raw:
+- Company
+- Security
+- Cybersecurity
+- Security Operations
+- Detection Engineering
+- SIEM
+- Threat Detection
+- Artificial Intelligence
+- Agents
 - Model Context Protocol
 - Data Lake
 maintainers:
@@ -48,6 +60,10 @@ apis:
   humanURL: https://public-docs.anvilogic.com/get-started/ai-operating-system-pricing
   baseURL: https://secure.anvilogic.com/mcp
   tags:
+  - MCP
+  - Agents
+  - Security Operations
+  tags_raw:
   - Model Context Protocol
   - Agents
   - Security Operations
@@ -69,6 +85,9 @@ apis:
   humanURL: https://public-docs.anvilogic.com/get-started/onboarding-guide/additional-tasks
   baseURL: https://secure.anvilogic.com/api/authentication/oauth
   tags:
+  - Authentication
+  - Security
+  tags_raw:
   - OAuth
   - Authentication
   - Security
