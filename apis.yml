@@ -11,6 +11,17 @@ description: 'Anvilogic is an Agentic SecOps platform founded in 2019 by former 
   S3, and dozens of EDR, SOAR, and workflow tools. Anvilogic exposes an OAuth 2.1
   protected Model Context Protocol (MCP) server so agents and customer-configured
   MCP connectors can call platform tools directly.'
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://cdn.prod.website-files.com/6a4cfd0a31bb60a376cd1ee9/6a68af2d3deeaa9baf085208_anvilogic-og-1c-1200x630.png
 url: https://raw.githubusercontent.com/api-evangelist/anvilogic/refs/heads/main/apis.yml
 x-type: company
