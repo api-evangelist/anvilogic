@@ -124,6 +124,8 @@ apis:
   - type: WellKnown
     url: well-known/anvilogic-well-known.yml
 common:
+- type: Plans
+  url: plans/anvilogic-plans-pricing.yml
 - url: https://www.anvilogic.com/learn/rss.xml
   type: BlogRSS
 - type: Website
