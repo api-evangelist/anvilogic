@@ -1,0 +1,85 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-07'
+method: searched
+source: https://public-docs.anvilogic.com/get-started/ai-operating-system-pricing
+sources:
+- https://public-docs.anvilogic.com/get-started/ai-operating-system-pricing
+provenance:
+  tool: all/0-working/economics/harvest_pricing.py
+  run: 20261007T104522
+  grounding: every price_text was found verbatim in the fetched page text
+audience: business-product
+pricing_basis: per-call
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-07'
+published: true
+note: Credit-based metering page; rates stated in credits, no currency amounts. Packs sold yearly and
+  sized by account team.
+plan_count: 10
+plans:
+- name: Example credit pack (300 credits/day)
+  price_text: '300'
+  price: 300
+  period: year
+  unit: credits per day
+  included_quota: 109,500 credits per year
+  overage: Additional pack sizes are available.
+- name: Triage Agent - Threat Identifier verdict
+  price_text: 1 per alert
+  price: 1
+  period: per-use
+  unit: credits per alert
+  included_quota: Fixed rate
+- name: Triage Agent - Threat Scenario verdict
+  price_text: 3 per alert
+  price: 3
+  period: per-use
+  unit: credits per alert
+  included_quota: Fixed rate
+- name: Tuning Insight accepted
+  price_text: 1 per insight accepted
+  price: 1
+  period: per-use
+  unit: credits per insight
+  included_quota: Fixed rate
+- name: Hunting Insight generated
+  price_text: 3 per insight generated
+  price: 3
+  period: per-use
+  unit: credits per insight
+  included_quota: Fixed rate
+- name: Health Insight generated
+  price_text: 0 credits per insight generated or accepted
+  price: 0
+  period: per-use
+  unit: credits per insight
+  included_quota: Fixed rate
+- name: Anvilogic MCP Server tool call
+  price_text: 1 credit per tool call
+  price: 1
+  period: per-use
+  unit: credits per tool call
+  included_quota: Fixed rate
+- name: Blueprints workflow run
+  price_text: Averages 20 credits per session *.
+  price: 20
+  period: per-use
+  unit: credits per session
+  included_quota: Metered
+- name: AI Chat
+  price_text: Averages 2 credits per session *.
+  price: 2
+  period: per-use
+  unit: credits per session
+  included_quota: Metered
+- name: Federated Search
+  price_text: Averages 1 credits per session *.
+  price: 1
+  period: per-use
+  unit: credits per session
+  included_quota: Metered
+rate_limit_statements:
+- You set budgets per product, per day
+- Usage rolls up against the yearly pack. There is no monthly reset
