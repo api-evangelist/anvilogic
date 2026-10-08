@@ -83,3 +83,92 @@ plans:
 rate_limit_statements:
 - You set budgets per product, per day
 - Usage rolls up against the yearly pack. There is no monthly reset
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - hybrid
+  - metered
+  units:
+  - credit
+  plans:
+  - name: Example credit pack (300 credits/day)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - credit
+    periods:
+    - year
+  - name: Triage Agent - Threat Identifier verdict
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - credit
+    periods:
+    - other
+  - name: Triage Agent - Threat Scenario verdict
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - credit
+    periods:
+    - other
+  - name: Tuning Insight accepted
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - credit
+    periods:
+    - other
+  - name: Hunting Insight generated
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - credit
+    periods:
+    - other
+  - name: Health Insight generated
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - credit
+    periods:
+    - other
+  - name: Anvilogic MCP Server tool call
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - credit
+    periods:
+    - other
+  - name: Blueprints workflow run
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - credit
+    periods:
+    - other
+  - name: AI Chat
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - credit
+    periods:
+    - other
+  - name: Federated Search
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - credit
+    periods:
+    - other
